@@ -15,10 +15,6 @@ const main = async () => {
   const app = express();
   const router = express.Router();
   app.use(
-    "/api/v1/upload/assets",
-    express.static(path.join(__dirname, "../public/upload/assets"))
-  );
-  app.use(
     fileUpload({
       limits: { fileSize: 20 * 1024 * 1024 }, // 20MB limit for large Excel files
       abortOnLimit: true,
@@ -37,7 +33,7 @@ const main = async () => {
   // Middleware untuk form data
   app.use(express.urlencoded({ extended: true }));
 
-  app.use("/api", router);
+  app.use("/smartdoorlock/api", router);
 
   app.use(errorHandler);
 
@@ -48,11 +44,11 @@ const main = async () => {
   };
 
   app.get("/", (req: Request, res: Response) => {
-    api.ok(res, "Hello Worldd");
+    api.ok(res, "Hello World");
   });
 
   app.listen(config.port, () =>
-    console.log(`🚀 Server running on port ${config.port}`)
+    console.log(`🚀 Server running on http://localhost:${config.port}`)
   );
 };
 
