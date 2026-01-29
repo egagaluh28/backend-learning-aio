@@ -6,9 +6,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon --exec ts-node src/server.ts",
     "start": "bun run --watch src/server.ts",
-    "pull:smartdoorlock": "npx prisma db pull --schema=./prisma/smartdoorlock.prisma",
-    "generate:smartdoorlock": "npx prisma generate --schema=./prisma/smartdoorlock.prisma",
-    "migrate:smartdoorlock": "npx prisma migrate dev --schema=./prisma/smartdoorlock.prisma --create-only"
+    "pull:schema1": "npx prisma db pull --schema=./prisma/schema1.prisma",
+    "generate:schema1": "npx prisma generate --schema=./prisma/schema1.prisma",
+    "migrate:schema1": "npx prisma migrate dev --schema=./prisma/schema1.prisma --create-only"
   },
   "keywords": [],
   "author": "",
@@ -50,9 +50,7 @@
     "memcached": "^2.2.2",
     "module-alias": "^2.2.3",
     "multer": "^1.4.5-lts.1",
-    "node-cron": "^3.0.3",
-    "xlsx": "^0.18.5",
-    "yup": "^1.6.1"
+    "node-cron": "^3.0.3"
   },
   "_moduleAliases": {
     "@": "./src"

@@ -1,0 +1,73 @@
+
+GET http://localhost:4358/api/v1/todos
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJuYW1lIjoiQW5kaSBQcmF0YW1hIiwiZW1haWwiOiJhbmRpQGV4YW1wbGUuY29tIiwiY3JlYXRlZF9hdCI6IjIwMjUtMTItMThUMDg6NDg6NTkuMDAwWiIsInVwZGF0ZWRfYXQiOiIyMDI1LTEyLTE4VDA4OjQ4OjU5LjAwMFoifSwiaWF0IjoxNzY5Njc4Njk5LCJleHAiOjE3Njk2ODIyOTl9.1eeY_8D8RDrkxwaFPREw7GG3YzZ8XmLqEK4kR4SFxXk
+
+###
+GET http://localhost:4358/api/v1/todos/10
+
+###
+POST http://localhost:4358/api/v1/todos
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjozLCJuYW1lIjoiZWdhIiwiZW1haWwiOiJlZ2FAZ21haWwuY29tIiwiY3JlYXRlZF9hdCI6IjIwMjYtMDEtMjlUMDg6NDU6MzIuMDAwWiIsInVwZGF0ZWRfYXQiOiIyMDI2LTAxLTI5VDA4OjQ1OjMyLjAwMFoifSwiaWF0IjoxNzY5Njc2Mzg5LCJleHAiOjE3Njk2Nzk5ODl9.-WUNrOyeYRNwTNkAbXus-JgyT90aniyBqYHJytnq6KM
+
+{
+    "title": "New anjay",
+    "status": "pending",
+    "priority": "medium",
+    "due_date": "2026-12-31"
+}
+
+###
+PUT http://localhost:4358/api/v1/todos/2
+Content-Type: application/json
+
+{
+    "title": "Updated Title",
+    "status": "pending",
+    "priority": "high",
+    "due_date": "2026-11-30",
+    "description": "ini di update dei"
+}
+
+###
+DELETE http://localhost:4358/api/v1/todos/10
+
+###
+GET http://localhost:4358/api/v1/categories
+
+###
+GET http://localhost:4358/api/v1/categories/3
+
+
+###
+POST http://localhost:4358/api/v1/categories
+Content-Type: application/json
+
+{
+    "name": "New Category"
+}
+
+### 
+PUT http://localhost:4358/api/v1/categories/3
+Content-Type: application/json
+
+{
+    "name": "Updated Category Name"
+}
+
+###
+DELETE http://localhost:4358/api/v1/categories/5
+
+###
+GET http://localhost:4358/api/v1/todosPriority
+
+###
+GET http://localhost:4358/api/v1/todosStatus
+
+###
+GET http://localhost:4358/api/v1/enum
+
+###
+GET http://localhost:4358/api/v1/query/testing
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjozLCJuYW1lIjoiZWdhIiwiZW1haWwiOiJlZ2FAZ21haWwuY29tIiwiY3JlYXRlZF9hdCI6IjIwMjYtMDEtMjlUMDg6NDU6MzIuMDAwWiIsInVwZGF0ZWRfYXQiOiIyMDI2LTAxLTI5VDA4OjQ1OjMyLjAwMFoifSwiaWF0IjoxNzY5NjgwMzc4LCJleHAiOjE3Njk2ODM5Nzh9.I33nAUU6mSRyRFlCku1uFDACFd_asIASndb0LI8GzOk

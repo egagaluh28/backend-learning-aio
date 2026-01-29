@@ -10,7 +10,7 @@ import path from "path";
 import fileUpload from "express-fileupload";
 
 const main = async () => {
-  process.title = "Second APIs Service";
+  process.title = "TODO App";
   dotenv.config();
   const app = express();
   const router = express.Router();
@@ -33,7 +33,7 @@ const main = async () => {
   // Middleware untuk form data
   app.use(express.urlencoded({ extended: true }));
 
-  app.use("/smartdoorlock/api", router);
+  app.use("/api/v1", router);
 
   app.use(errorHandler);
 

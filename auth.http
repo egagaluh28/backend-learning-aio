@@ -1,0 +1,17 @@
+POST http://localhost:4358/api/v1/auth/login
+Content-Type: application/json
+
+{
+    "username": "ega@gmail.com",
+    "password": "admin123"
+}
+
+###
+POST http://localhost:4358/api/v1/auth/register
+Content-Type: application/json
+
+{
+    "name": "ega",
+    "email": "ega@gmail.com",
+    "password_hash": "admin123"
+}
