@@ -12,6 +12,6 @@ Content-Type: application/json
 
 {
     "name": "ega",
-    "email": "ega@gmail.com",
+    "email": "egagaluh@gmail.com",
     "password_hash": "admin123"
 }
