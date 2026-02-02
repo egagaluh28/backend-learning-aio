@@ -50,7 +50,6 @@ export const getAllTodos = [
   },
 ];
 
-// upload file example in create todo by form data
 export const createTodo = [
   authenticateToken,
   async (req: CustomRequest, res: Response) => {
