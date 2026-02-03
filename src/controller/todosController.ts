@@ -6,10 +6,52 @@ import { CustomRequest } from "@/types";
 import fs from "fs";
 import path from "path";
 
+// export const getAllTodos = [
+//   authenticateToken,
+//   async (req: CustomRequest, res: Response) => {
+//     const userId = req.user.id;
+//     try {
+//       const data = await db1.todos.findMany({
+//         select: {
+//           id: true,
+//           title: true,
+//           description: true,
+//           status: true,
+//           priority: true,
+//           due_date: true,
+//           created_at: true,
+//           updated_at: true,
+//           category_id: true,
+//           file_upload: true,
+//           user_id: true,
+//           categories: {
+//             select: {
+//               id: true,
+//               name: true,
+//             },
+//           },
+//           users: {
+//             select: {
+//               id: true,
+//               name: true,
+//               email: true,
+//             },
+//           },
+//         },
+//         where: { user_id: userId },
+//       });
+//       res.json({
+//         status: "success",
+//         data,
+//       });
+//     } catch (error) {
+//       res.status(500).json({ error: "Failed to fetch todos" });
+//     }
+//   },
+// ];
+
 export const getAllTodos = [
-  authenticateToken,
-  async (req: CustomRequest, res: Response) => {
-    const userId = req.user.id;
+  async (req: Request, res: Response) => {
     try {
       const data = await db1.todos.findMany({
         select: {
@@ -38,8 +80,8 @@ export const getAllTodos = [
             },
           },
         },
-        where: { user_id: userId },
       });
+
       res.json({
         status: "success",
         data,
@@ -59,7 +101,7 @@ export const createTodo = [
 
       // Gunakan express-fileupload
       if (req.files && req.files.file_upload) {
-        const file = req.files.file_upload   as any;
+        const file = req.files.file_upload as any;
         const uploadDir = path.join(process.cwd(), "uploads");
 
         if (!fs.existsSync(uploadDir)) {

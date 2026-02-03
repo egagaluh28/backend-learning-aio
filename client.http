@@ -1,7 +1,7 @@
 
-GET http://localhost:4358/api/v1/todos
+GET http://localhost:4358/api/todos
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjozLCJuYW1lIjoiZWdhIiwiZW1haWwiOiJlZ2FAZ21haWwuY29tIiwiY3JlYXRlZF9hdCI6IjIwMjYtMDEtMjlUMDg6NDU6MzIuMDAwWiIsInVwZGF0ZWRfYXQiOiIyMDI2LTAxLTI5VDA4OjQ1OjMyLjAwMFoifSwiaWF0IjoxNzY5NzQ0ODQyLCJleHAiOjE3Njk3NDg0NDJ9.zN5aMZG5U5gjLhkDyOZY2S75BF8cASPSTrVD1Oi7-58 
+
 
 ###
 GET http://localhost:4358/api/v1/todos/10

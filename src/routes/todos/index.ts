@@ -7,8 +7,7 @@ import { getAllTodos, createTodo } from "@/controller/todosController";
 import fs from "fs";
 import path from "path";
 
-
-export const get = getAllTodos;
+// export const get = getAllTodos;
 export const post = createTodo;
 
 // export const get = [
@@ -53,6 +52,25 @@ export const post = createTodo;
 //     }
 //   },
 // ];
+
+export const get = async (req: Request, res: Response) => {
+  try {
+    const data = await db1.todos.findMany({
+      select: {
+        title: true,
+        description: true,
+        file_upload: true,
+        status: true,
+      },
+    });
+    res.json({
+      status: "success",
+      data,
+    });
+  } catch (error) {
+    res.status(500).json({ error: "Failed to fetch todos" });
+  }
+};
 
 // export const post = [
 //   authenticateToken,

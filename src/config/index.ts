@@ -7,7 +7,7 @@ export const config = {
   cors: {
     // Allow multiple origins (comma-separated). Include shell (4200) and micro app (4201) by default.
     origin: (
-      process.env.CORS_ORIGIN || "http://localhost:4200,http://localhost:4202"
+      process.env.CORS_ORIGIN || "http://localhost:8236,http://localhost:4200,http://localhost:4202"
     ).split(","),
     credentials: true,
   },
