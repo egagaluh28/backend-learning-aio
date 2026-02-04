@@ -19,14 +19,12 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjozL
 }
 
 ###
-PUT http://localhost:4358/api/v1/todos/2
+PUT http://localhost:4358/api/todos/2
 Content-Type: application/json
 
 {
     "title": "Updated Title",
     "status": "pending",
-    "priority": "high",
-    "due_date": "2026-11-30",
     "description": "ini di update dei"
 }
 

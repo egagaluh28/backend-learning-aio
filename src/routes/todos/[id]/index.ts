@@ -47,11 +47,7 @@ export const put = async (req: Request, res: Response) => {
       data: {
         title: req.body.title ?? existing.title,
         status: req.body.status ?? existing.status,
-        description: req.body.description ?? existing.description,
-        priority: req.body.priority ?? existing.priority,
-        due_date: req.body.due_date
-          ? new Date(req.body.due_date)
-          : existing.due_date,
+        description: req.body.description ?? existing.description
       },
     });
 

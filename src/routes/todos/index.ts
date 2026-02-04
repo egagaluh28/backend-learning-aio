@@ -8,7 +8,7 @@ import fs from "fs";
 import path from "path";
 
 // export const get = getAllTodos;
-export const post = createTodo;
+// export const post = createTodo;
 
 // export const get = [
 //   authenticateToken,
@@ -57,6 +57,7 @@ export const get = async (req: Request, res: Response) => {
   try {
     const data = await db1.todos.findMany({
       select: {
+        id: true,
         title: true,
         description: true,
         file_upload: true,
@@ -69,6 +70,24 @@ export const get = async (req: Request, res: Response) => {
     });
   } catch (error) {
     res.status(500).json({ error: "Failed to fetch todos" });
+  }
+};
+
+export const post = async (req: Request, res: Response) => {
+  try {
+    const row = await db1.todos.create({
+      data: {
+        title: req.body.title,
+        description: req.body.description,
+        status: req.body.status,
+      },
+    });
+    res.json({
+      status: "success",
+      data: row,
+    });
+  } catch (error) {
+    res.status(500).json({ error: "Failed to create todo" });
   }
 };
 
